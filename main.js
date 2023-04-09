@@ -18,6 +18,7 @@ function generateQuestion() {
 
     // ランダムに足し算、引き算、乗算を生成する
     var operator;
+    var num = 0;
     var num1 = Math.floor(Math.random() * 10) + 1;
     var num2 = Math.floor(Math.random() * 10) + 1;
 
@@ -28,6 +29,12 @@ function generateQuestion() {
             break;
         case 1:
             operator = "-";
+            // マイナスにならないようにする
+            if(num1 < num2){
+                num = num1;
+                num1 = num2;
+                num2 = num;
+            }
             answer = num1 - num2;
             break;
         case 2:
