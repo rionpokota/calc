@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>計算問題くん</title>
+	<title>けいさんもんだいくん</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src='./main.js'></script>
 </head>
 <body onload="generateQuestion()">
-	<h1>計算問題くん</h1>
+	<h1>けいさんもんだいくん</h1>
 	<p id="question"></p>
 	<input type="text" id="answer" name="answer">
-	<button id="chkans" onclick="checkAnswer()">答えを確認</button>
+	<button id="chkans" onclick="checkAnswer()">こたえる</button>
     <br>
 	<br>
 	<button id="calcbtn" onclick="addToInput('1')">1</button>
@@ -34,5 +34,7 @@
 	<button id="calcbtn" onclick="clearInput()">C</button>
 	<button id="calcbtn" onclick="addToInput('/')">/</button>
 	<br>
+	<br>
+	<button id="checkbtn" onclick="answerCheck()">いまどのくらいまちがえてる？</button>
 </body>
 </html>
