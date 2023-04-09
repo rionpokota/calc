@@ -26,6 +26,7 @@ function checkAnswer() {
         document.getElementById('answer').value = '';
     } else {
         alert('不正解。もう一度挑戦してみてください。');
+        document.getElementById('answer').value = '';
     }
 }
 

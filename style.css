@@ -5,11 +5,17 @@
 }
 
 #answer{
-    width: 100px;
-    height: 20px;
+    width: 120px;
+    height: 30px;
     font-size: 20px;
 }
 
 #question{
     font-size: 30px;
+}
+
+#chkans{
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
 }

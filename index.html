@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>簡単な計算問題</title>
+	<title>計算問題くん</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <script src='./main.js'></script>
 </head>
 <body onload="generateQuestion()">
-	<h1>計算問題</h1>
+	<h1>計算問題くん</h1>
 	<p id="question"></p>
 	<input type="text" id="answer" name="answer">
-	<button onclick="checkAnswer()">答えを確認する</button>
+	<button id="chkans" onclick="checkAnswer()">答えを確認</button>
     <br>
 	<br>
 	<button id="calcbtn" onclick="addToInput('1')">1</button>
