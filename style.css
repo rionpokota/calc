@@ -25,3 +25,9 @@ body{
     font-size: 15px;
     
 }
+
+#checkbtn{
+    width: 240px;
+    height: 40px;
+    font-size: 12px;
+}
