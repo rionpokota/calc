@@ -13,6 +13,12 @@ function generateQuestion() {
     // if (operator === '+') {
     //     answer = num1 + num2;
     // } else {
+    //     マイナスにならないようにする
+    //     if(num1 < num2){
+    //         num = num1;
+    //         num1 = num2;
+    //         num2 = num;
+    //     }
     //     answer = num1 - num2;
     // }
 
