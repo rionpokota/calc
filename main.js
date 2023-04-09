@@ -1,17 +1,40 @@
 function generateQuestion() {
-    // ランダムに足し算または引き算を生成する
-    var operator = Math.random() < 0.5 ? '+' : '-';
-    // ランダムに2つの整数を生成する
+    // // ランダムに足し算または引き算を生成する
+    // var operator = Math.random() < 0.5 ? '+' : '-';
+    // // ランダムに2つの整数を生成する
+    // var num1 = Math.floor(Math.random() * 10) + 1;
+    // var num2 = Math.floor(Math.random() * 10) + 1;
+    // // 問題を表示する
+    // document.getElementById('question').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ';
+    // // 答えを計算して保存する
+    // if (operator === '+') {
+    //     answer = num1 + num2;
+    // } else {
+    //     answer = num1 - num2;
+    // }
+
+    // ランダムに足し算、引き算、乗算を生成する
+    var operator;
     var num1 = Math.floor(Math.random() * 10) + 1;
     var num2 = Math.floor(Math.random() * 10) + 1;
-    // 問題を表示する
-    document.getElementById('question').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ';
-    // 答えを計算して保存する
-    if (operator === '+') {
-        answer = num1 + num2;
-    } else {
-        answer = num1 - num2;
+
+    switch(Math.floor(Math.random() * 3)){
+        case 0:
+            operator = "+";
+            answer = num1 + num2;
+            break;
+        case 1:
+            operator = "-";
+            answer = num1 - num2;
+            break;
+        case 2:
+            operator = "×";
+            answer = num1 * num2;
+            break;
     }
+
+    // 問題を表示する
+	document.getElementById('question').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ';
 }
 
 function checkAnswer() {
