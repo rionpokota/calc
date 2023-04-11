@@ -1,5 +1,7 @@
 var questionCount = 0;
 var errorCount = 0;
+var num1 = 0;
+var num2 = 0;
 
 function generateQuestion() {
     // // ランダムに足し算または引き算を生成する
@@ -25,10 +27,9 @@ function generateQuestion() {
     // ランダムに足し算、引き算、乗算を生成する
     var operator;
     var num = 0;
-    var num1 = Math.floor(Math.random() * 10) + 1;
-    var num2 = Math.floor(Math.random() * 10) + 1;
+    randomGenerate();
 
-    switch(Math.floor(Math.random() * 3)){
+    switch(Math.floor(Math.random() * 4)){
         case 0:
             operator = "+";
             answer = num1 + num2;
@@ -45,13 +46,50 @@ function generateQuestion() {
             break;
         case 2:
             operator = "×";
-            answer = num1 * num2;
+            // 1を避ける
+            while(true){
+                if(num1 == 1 || num2 == 1){
+                    console.log("かけ算でかける数が1になった");
+                    randomGenerate();
+                }
+                else{
+                    answer = num1 * num2;
+                    break;
+                }
+            }
+            break;
+        case 3:
+            operator = "÷";
+            // 割り切れる数を作成する
+            while(true){
+                if(num1 % num2 != 0){
+                    console.log("割り切れない数になった");
+                    randomGenerate();
+                }
+                else if(num1 == num2){
+                    console.log("同じ数になった");
+                    randomGenerate();
+                }
+                else if(num1 == 1 || num2 == 1){
+                    console.log("割る数が1になった")
+                    randomGenerate();
+                }
+                else{
+                    answer = num1 / num2;
+                    break;
+                }
+            }
             break;
     }
 
     // 問題を表示する
 	document.getElementById('question').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ';
     questionCount += 1;
+}
+
+function randomGenerate(){
+    num1 = Math.floor(Math.random() * 10) + 1;
+    num2 = Math.floor(Math.random() * 10) + 1;
 }
 
 function checkAnswer() {
