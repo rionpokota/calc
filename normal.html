@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>けいさんもんだいくん</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./style.css">
+    <script src='./main.js'></script>
+</head>
+<body onload="generateQuestion()">
+	<h1>けいさんもんだいくん</h1>
+	<p id="question"></p>
+	<input type="text" id="answer" name="answer">
+	<button id="chkans" onclick="checkAnswer()">こたえる</button>
+    <br>
+	<br>
+	<button id="calcbtn" onclick="addToInput('1')">1</button>
+	<button id="calcbtn" onclick="addToInput('2')">2</button>
+	<button id="calcbtn" onclick="addToInput('3')">3</button>
+	<button id="calcbtn" onclick="addToInput('+')">+</button>
+	<br>
+	<button id="calcbtn" onclick="addToInput('4')">4</button>
+	<button id="calcbtn" onclick="addToInput('5')">5</button>
+	<button id="calcbtn" onclick="addToInput('6')">6</button>
+	<button id="calcbtn" onclick="addToInput('-')">-</button>
+	<br>
+	<button id="calcbtn" onclick="addToInput('7')">7</button>
+	<button id="calcbtn" onclick="addToInput('8')">8</button>
+	<button id="calcbtn" onclick="addToInput('9')">9</button>
+	<button id="calcbtn" onclick="addToInput('*')">*</button>
+	<br>
+	<button id="calcbtn" onclick="addToInput('0')">0</button>
+	<button id="calcbtn" onclick="addToInput('.')">.</button>
+	<button id="calcbtn" onclick="clearInput()">C</button>
+	<button id="calcbtn" onclick="addToInput('/')">/</button>
+	<br>
+	<br>
+	<button id="checkbtn" onclick="answerCheck()">いまどのくらいまちがえてる？</button>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="back">
+		<a href="./index.html">トップページへもどる</a>
+	</div>
+</body>
+</html>

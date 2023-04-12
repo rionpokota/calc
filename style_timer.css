@@ -1,0 +1,55 @@
+body{
+    text-align: center;
+}
+
+
+#calcbtn{
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    touch-action: manipulation;
+}
+
+#gamestart{
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+#gamestart-container {
+    display: block;
+}
+
+#timer{
+    font-size: 20px;
+}
+
+#answer{
+    width: 120px;
+    height: 30px;
+    font-size: 20px;
+}
+
+#question{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#chkans{
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    
+}
+
+#checkbtn{
+    width: 240px;
+    height: 40px;
+    font-size: 14px;
+}
+
+#back{
+    font-size: 20px;
+}
