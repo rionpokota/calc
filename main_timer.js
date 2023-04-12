@@ -114,7 +114,7 @@ function checkAnswer() {
         document.getElementById('answer').value = '';
     } else {
         timerseconds = 1500;
-        showDialog('ちがいます。<br>もういちどがんばろう！');
+        showDialog('ちがいます<br>がんばろう！');
         // 入力欄クリア
         document.getElementById('answer').value = '';
         errorCount += 1;
