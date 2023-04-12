@@ -86,7 +86,7 @@ function checkAnswer() {
         document.getElementById('answer').value = '';
     } else {
         timerseconds = 1500;
-        showDialog('ちがいます。\nもういちどがんばろう！');
+        showDialog('ちがいます。<br>もういちどがんばろう！');
         // 入力欄クリア
         document.getElementById('answer').value = '';
         errorCount += 1
@@ -107,7 +107,7 @@ function answerCheck(){
 
 function showDialog(message) {
     var dialog = document.createElement('div');
-    dialog.textContent = message;
+    dialog.innerHTML = message;
     dialog.style.position = 'fixed';
     dialog.style.top = '50%';
     dialog.style.left = '50%';
