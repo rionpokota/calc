@@ -86,7 +86,7 @@ function checkAnswer() {
         document.getElementById('answer').value = '';
     } else {
         timerseconds = 1500;
-        showDialog('ちがいます。もういちどがんばろう！');
+        showDialog('ちがいます。\nもういちどがんばろう！');
         // 入力欄クリア
         document.getElementById('answer').value = '';
         errorCount += 1
