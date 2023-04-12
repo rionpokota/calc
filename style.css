@@ -10,6 +10,16 @@ body{
     touch-action: manipulation;
 }
 
+#gamestart{
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#timer{
+    font-size: 20px;
+}
+
 #answer{
     width: 120px;
     height: 30px;
@@ -31,4 +41,8 @@ body{
     width: 240px;
     height: 40px;
     font-size: 14px;
+}
+
+#back{
+    font-size: 20px;
 }
