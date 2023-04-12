@@ -2,28 +2,9 @@ var questionCount = 0;
 var errorCount = 0;
 var num1 = 0;
 var num2 = 0;
+var timerseconds = 0;
 
 function generateQuestion() {
-    // // ランダムに足し算または引き算を生成する
-    // var operator = Math.random() < 0.5 ? '+' : '-';
-    // // ランダムに2つの整数を生成する
-    // var num1 = Math.floor(Math.random() * 10) + 1;
-    // var num2 = Math.floor(Math.random() * 10) + 1;
-    // // 問題を表示する
-    // document.getElementById('question').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ';
-    // // 答えを計算して保存する
-    // if (operator === '+') {
-    //     answer = num1 + num2;
-    // } else {
-    //     マイナスにならないようにする
-    //     if(num1 < num2){
-    //         num = num1;
-    //         num1 = num2;
-    //         num2 = num;
-    //     }
-    //     answer = num1 - num2;
-    // }
-
     // ランダムに足し算、引き算、乗算を生成する
     var operator;
     var num = 0;
@@ -97,13 +78,15 @@ function checkAnswer() {
     var userAnswer = document.getElementById('answer').value;
     // 正解かどうかをチェックする
     if (userAnswer == answer) {
-        alert('せいかい！');
+        timerseconds = 1500;
+        showDialog('せいかい！');
         // 次の問題を生成する
         generateQuestion();
         // 入力欄をクリアする
         document.getElementById('answer').value = '';
     } else {
-        alert('ちがいます。もういちどがんばろう！');
+        timerseconds = 1500;
+        showDialog('ちがいます。もういちどがんばろう！');
         // 入力欄クリア
         document.getElementById('answer').value = '';
         errorCount += 1
@@ -120,4 +103,23 @@ function clearInput() {
 
 function answerCheck(){
     alert('いま' + ' ' + questionCount + ' ' + 'もんめで、' + ' ' + errorCount + ' ' + 'かいまちがえています。');
+}
+
+function showDialog(message) {
+    var dialog = document.createElement('div');
+    dialog.textContent = message;
+    dialog.style.position = 'fixed';
+    dialog.style.top = '50%';
+    dialog.style.left = '50%';
+    dialog.style.transform = 'translate(-50%, -50%)';
+    dialog.style.backgroundColor = 'white';
+    dialog.style.border = '1px solid black';
+    dialog.style.padding = '20px';
+    dialog.style.zIndex = '9999';
+
+    document.body.appendChild(dialog);
+
+    setTimeout(function() {
+        document.body.removeChild(dialog);
+    }, timerseconds); // 1.5秒後にダイアログを非表示にする
 }
