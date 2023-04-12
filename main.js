@@ -121,5 +121,5 @@ function showDialog(message) {
 
     setTimeout(function() {
         document.body.removeChild(dialog);
-    }, timerseconds); // 1.5秒後にダイアログを非表示にする
+    }, timerseconds); // 指定秒数後にダイアログを非表示にする
 }
