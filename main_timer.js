@@ -106,18 +106,25 @@ function checkAnswer() {
     // 正解かどうかをチェックする
     if (userAnswer == answer) {
         timerseconds = 1500;
-        showDialog('せいかい！');
-        seikaiCount += 1;
+        document.getElementById("ans").innerHTML = "せいかい！";
+        setTimeout(function() {
+            document.getElementById("ans").innerHTML = "";
+        }, 1500);
+        //showDialog('せいかい！');
         // 次の問題を生成する
         generateQuestion();
         // 入力欄をクリアする
         document.getElementById('answer').value = '';
     } else {
         timerseconds = 1500;
-        showDialog('ちがいます<br>がんばろう！');
+        document.getElementById("ans").innerHTML = "ちがいます。がんばろう！";
+        setTimeout(function() {
+            document.getElementById("ans").innerHTML = "";
+        }, 1500);
+        //showDialog('ちがいます。<br>がんばろう！');
         // 入力欄クリア
         document.getElementById('answer').value = '';
-        errorCount += 1;
+        errorCount += 1
     }
 }
 

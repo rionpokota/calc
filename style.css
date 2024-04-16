@@ -46,3 +46,8 @@ body{
 #back{
     font-size: 20px;
 }
+
+#ans {
+    height: 20px; /* Adjust the height as needed */
+    overflow: hidden;
+}
