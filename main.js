@@ -109,7 +109,7 @@ function showDialog(message) {
     var dialog = document.createElement('div');
     dialog.innerHTML = message;
     dialog.style.position = 'fixed';
-    dialog.style.top = '50%';
+    dialog.style.top = '23%';
     dialog.style.left = '50%';
     dialog.style.transform = 'translate(-50%, -50%)';
     dialog.style.backgroundColor = 'white';
