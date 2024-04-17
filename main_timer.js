@@ -110,6 +110,7 @@ function checkAnswer() {
         setTimeout(function() {
             document.getElementById("ans").innerHTML = "";
         }, 1500);
+        seikaiCount += 1;
         //showDialog('せいかい！');
         // 次の問題を生成する
         generateQuestion();
