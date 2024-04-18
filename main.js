@@ -2,40 +2,71 @@ var questionCount = 0;
 var errorCount = 0;
 var num1 = 0;
 var num2 = 0;
+var num1_bk = 0;
+var num2_bk = 0;
 var timerseconds = 0;
 
 function generateQuestion() {
-    // ランダムに足し算、引き算、乗算を生成する
+    // ランダムに足し算、引き算、乗算、除算を生成する
     var operator;
     var num = 0;
     randomGenerate();
 
     switch(Math.floor(Math.random() * 4)){
         case 0:
-            operator = "+";
-            answer = num1 + num2;
-            break;
-        case 1:
-            operator = "-";
-            // マイナスにならないようにする
-            if(num1 < num2){
-                num = num1;
-                num1 = num2;
-                num2 = num;
-            }
-            answer = num1 - num2;
-            break;
-        case 2:
-            operator = "×";
-            // 1を避ける
             while(true){
-                if(num1 == 1 || num2 == 1){
-                    console.log("かけ算でかける数が1になった");
-                    randomGenerate();
+                // 連続で同じ問題が出ないようにする
+                if(questionCount == 0 || (num1 != num1_bk && num2 != num2_bk)){
+                    operator = "+";
+                    answer = num1 + num2;
+                    break;
                 }
                 else{
-                    answer = num1 * num2;
+                    console.log("足し算で同じ問題になった");
+                    randomGenerate();
+                }
+            }
+            break;
+            
+        case 1:
+            while(true){
+                // 連続で同じ問題が出ないようにする
+                if(questionCount == 0 || (num1 != num1_bk && num2 != num2_bk)){
+                    operator = "-";
+                    // マイナスにならないようにする
+                    if(num1 < num2){
+                        num = num1;
+                        num1 = num2;
+                        num2 = num;
+                    }
+                    answer = num1 - num2;
                     break;
+                }
+                else{
+                    console.log("引き算で同じ問題になった");
+                    randomGenerate();
+                }
+            }
+            break;
+
+        case 2:
+            operator = "×";
+            while(true){
+                // 連続で同じ問題が出ないようにする
+                if(questionCount == 0 || (num1 != num1_bk && num2 != num2_bk)){
+                    // 1を避ける
+                    if(num1 == 1 || num2 == 1){
+                        console.log("かけ算でかける数が1になった");
+                        randomGenerate();
+                    }
+                    else{
+                        answer = num1 * num2;
+                        break;
+                    }
+                }
+                else{
+                    console.log("かけ算で同じ問題になった");
+                    randomGenerate();
                 }
             }
             break;
@@ -43,21 +74,28 @@ function generateQuestion() {
             operator = "÷";
             // 割り切れる数を作成する
             while(true){
-                if(num1 % num2 != 0){
-                    console.log("割り切れない数になった");
-                    randomGenerate();
-                }
-                else if(num1 == num2){
-                    console.log("同じ数になった");
-                    randomGenerate();
-                }
-                else if(num1 == 1 || num2 == 1){
-                    console.log("割る数が1になった")
-                    randomGenerate();
+                // 連続で同じ問題が出ないようにする
+                if(questionCount == 0 || (num1 != num1_bk && num2 != num2_bk)){
+                    if(num1 % num2 != 0){
+                        console.log("割り切れない数になった");
+                        randomGenerate();
+                    }
+                    else if(num1 == num2){
+                        console.log("同じ数になった");
+                        randomGenerate();
+                    }
+                    else if(num1 == 1 || num2 == 1){
+                        console.log("割る数が1になった")
+                        randomGenerate();
+                    }
+                    else{
+                        answer = num1 / num2;
+                        break;
+                    }
                 }
                 else{
-                    answer = num1 / num2;
-                    break;
+                    console.log("割り算で同じ問題になった");
+                    randomGenerate();
                 }
             }
             break;
@@ -65,6 +103,8 @@ function generateQuestion() {
 
     // 問題を表示する
 	document.getElementById('question').innerHTML = num1 + ' ' + operator + ' ' + num2 + ' = ';
+    num1_bk = num1;
+    num2_bk = num2;
     questionCount += 1;
 }
 
